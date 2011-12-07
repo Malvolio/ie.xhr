@@ -1,0 +1,4 @@
+
+IE.XHR provides a simplistic replacement for XMLHttpRequest that works on IE and support for CORS.
+
+Microsoft provides a more full-featured replacement, called Microsoft.XMLHTTP, but that product is crippled by a lack of support for CORS.
