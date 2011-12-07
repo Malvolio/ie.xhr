@@ -1,4 +1,51 @@
-
+SUMMARY
 IE.XHR provides a simplistic replacement for XMLHttpRequest that works on IE and support for CORS.
 
-Microsoft provides a more full-featured replacement, called Microsoft.XMLHTTP, but that product is crippled by a lack of support for CORS.
+Microsoft provides a more full-featured replacement, called Microsoft.XMLHTTP, but that product is crippled by a lack of support for CORS.  IE.XHR uses another Microsoft product, called Microsoft.XDomainRequest, to actually make cross-domain requests, and then does its best to fake its way through the rest.  It can be used by jQuery's $.ajax function, but because of its limitations, should probably only be used when cross-domain functionality is actually needed.
+
+EXAMPLE
+To use it with jQuery, add it as the xhr property, like so:
+
+    $.ajax({
+      type: 'GET',
+      url: "http://example.org/json-interface/data",
+      dataType: 'json',
+      xhr : window.IEXMLHttpRequest || jQuery.ajaxSettings.xhr,
+      crossDomain: true,
+      success: function(data){
+           // ... process the data here
+      }
+    });
+
+
+TODO
+- test it with frameworks other than jQuery
+- if possible, add the missing functions (mostly pertaining to headers)
+- dispatch a team of nuclear-armed ninjas to Redmond and solve the problem once and for all
+
+WARRANTY 
+Zip.  This library worked for me but I have no reason to believe it will work for you and given the general unreliability of IE, some reason not to.  If you use this library and it causes your house to burn down, or incites your children to become heterosexual, or lures your pets into wetting the couch, or otherwise performs in a disappointing manner, you have no one to blame but yourself.  You acknowledge that this software is not designed or intended for use in the design, construction, operation or maintenance of any nuclear facility.  You should also acknowledge that using any Microsoft product in any nuclear facility, or indeed in any situation more demanding than porn-surfing on a Thursday morning is probably unwise.  In any case, no suing me.  Seriously, do not sue me.  This is very important: Michael is not to be sued.  If this warranty -- especially the no-suing-Michael part -- is unacceptable to you for any reason, delete all copies of this software, forget you ever heard of me, and consider counseling.
+
+LICENCE
+Do whatever you want with it.  Sell it, give it away, claim you wrote it, submit it as homework. Knock yourself out.  What do I care?
+
+LICENCING FEE
+Free.  What were you expecting?  If you feel you must pay something, make a donation to Heifer Unlimited (http://www.heifer.org), which buys goats, cows, and similar ungulates for poor people, thereby making them permanently less poor.  An email to me wouldn't go amiss either:  malvoliosf@gmail.com
+
+JOKE ABOUT LICENCING FEE
+Little Suzy was telling the class about her trip to her grandfather's farm.  She told about the chickens and pigs and goats and then said, "But my favorite was the two fuckers."
+The teacher interrupted, agast.  "Suzy, what ... uh, what did you say?"
+Suzy rolled her eyes.  "The young cows, just a year or two old.  My grandfather has a bunch of them and he told us they were called 'fuckers'."
+The teacher was stunned.  "Uh, he called them ... uh ... that?"
+Suzy shrugged.  "Well, he said they were called 'effers' but we knew what he meant."
+
+So remember, donate to  Heifer Unlimited http://www.heifer.org
+
+
+EXCUSES
+This is my first attempt at open-source, so as you may have gathered, I haven't picked up all of the nuances.  It's also my first IE product and, knock wood, my last.
+
+SIGN-OFF
+Have fun,
+Michael Lorton
+December 6, 2011

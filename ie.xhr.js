@@ -5,6 +5,12 @@
 
 /*global window, XDomainRequest, ActiveXObject */
 
+
+/*
+  CORS-capable XHR for IE
+  see https://github.com/Malvolio/ie.xhr for all details
+  Michael S Lorton - 2011
+*/
 var IEXMLHttpRequest = window.XDomainRequest && function() {
   var xdr = new XDomainRequest();
   if (!xdr) {
