@@ -1,0 +1,21 @@
+{
+  "name": "ie.xhr",
+  "main": "ie.xhr.js",
+  "version": "1.0.0",
+  "homepage": "https://github.com/Malvolio/ie.xhr",
+  "authors": [
+    "Michael Lorton"
+  ],
+  "description": "IE.XHR provides a simplistic replacement for XMLHttpRequest that works on IE and has support for CORS.",
+  "keywords": [
+    "IE",
+    "XHR",
+    "XmlHttpRequest",
+    "compatibility"
+  ],
+  "license": "CC0 1.0 Universal",
+  "ignore": [
+    "**/.*",
+    "README"
+  ]
+}
